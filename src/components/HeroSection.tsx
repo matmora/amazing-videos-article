@@ -1,17 +1,16 @@
 import { useEffect } from 'react';
 import heroImage from '@/assets/hero-image.jpg';
-
 export const HeroSection = () => {
   const scrollToContact = () => {
     const contactSection = document.getElementById('contact-section');
-    contactSection?.scrollIntoView({ behavior: 'smooth' });
+    contactSection?.scrollIntoView({
+      behavior: 'smooth'
+    });
   };
-
   useEffect(() => {
     const heroTitle = document.querySelector('.hero-title');
     const heroSubtitle = document.querySelector('.hero-subtitle');
     const heroButton = document.querySelector('.hero-button');
-    
     setTimeout(() => {
       heroTitle?.classList.add('visible');
       setTimeout(() => {
@@ -22,17 +21,10 @@ export const HeroSection = () => {
       }, 300);
     }, 500);
   }, []);
-
-  return (
-    <section className="relative h-screen w-full overflow-hidden">
+  return <section className="relative h-screen w-full overflow-hidden">
       {/* Hero Background Image */}
       <div className="absolute inset-0">
-        <img
-          src={heroImage}
-          alt="Professional content creator filming Instagram video in golden hour light"
-          className="hero-image lazy-image"
-          loading="eager"
-        />
+        <img src={heroImage} alt="Professional content creator filming Instagram video in golden hour light" className="hero-image lazy-image" loading="eager" />
         <div className="absolute inset-0 bg-gradient-hero"></div>
       </div>
 
@@ -57,12 +49,7 @@ export const HeroSection = () => {
             Learn the essentials of creating viral, scroll-stopping content.
           </p>
           
-          <button
-            onClick={scrollToContact}
-            className="hero-button fade-in btn-editorial text-base md:text-lg px-8 py-4"
-          >
-            Work With Me
-          </button>
+          
         </div>
       </div>
 
@@ -73,6 +60,5 @@ export const HeroSection = () => {
           <div className="w-0.5 h-8 bg-white"></div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
