@@ -57,7 +57,7 @@ export const ContentStep = ({
               <img
                 src={imageSrc}
                 alt={imageAlt}
-                className="section-image lazy-image rounded-lg shadow-2xl"
+                className="section-image lazy-image rounded-lg shadow-2xl object-top"
                 loading="lazy"
               />
             </div>
