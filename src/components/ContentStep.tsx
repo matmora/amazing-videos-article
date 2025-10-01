@@ -59,7 +59,7 @@ export const ContentStep = ({
                 <img
                   src={imageSrc}
                   alt={imageAlt}
-                  className="section-image lazy-image w-full h-full object-cover object-top"
+                  className="section-image lazy-image w-full h-full object-cover object-center"
                   loading="lazy"
                 />
               </AspectRatio>
