@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+import { AspectRatio } from '@/components/ui/aspect-ratio';
 
 interface ContentStepProps {
   stepNumber: string;
@@ -54,12 +55,23 @@ export const ContentStep = ({
           {/* Image */}
           <div className={`${reverse ? 'lg:col-start-1' : ''}`}>
             <div className="slide-up">
-              <img
-                src={imageSrc}
-                alt={imageAlt}
-                className="section-image lazy-image rounded-lg shadow-2xl"
-                loading="lazy"
-              />
+              {/* Mobile: full width, Desktop: 4:5 aspect ratio */}
+              <div className="lg:max-w-lg lg:mx-auto">
+                <AspectRatio ratio={4/5} className="hidden lg:block">
+                  <img
+                    src={imageSrc}
+                    alt={imageAlt}
+                    className="lazy-image rounded-lg shadow-2xl w-full h-full object-contain"
+                    loading="lazy"
+                  />
+                </AspectRatio>
+                <img
+                  src={imageSrc}
+                  alt={imageAlt}
+                  className="section-image lazy-image rounded-lg shadow-2xl lg:hidden"
+                  loading="lazy"
+                />
+              </div>
             </div>
           </div>
         </div>
