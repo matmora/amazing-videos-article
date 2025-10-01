@@ -1,5 +1,4 @@
 import { ReactNode } from 'react';
-import { AspectRatio } from '@/components/ui/aspect-ratio';
 
 interface ContentStepProps {
   stepNumber: string;
@@ -22,8 +21,8 @@ export const ContentStep = ({
 }: ContentStepProps) => {
   return (
     <section className="editorial-section">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className={`grid lg:grid-cols-2 gap-8 lg:gap-12 items-center ${reverse ? 'lg:grid-flow-col-dense' : ''}`}>
+      <div className="editorial-container">
+        <div className={`grid lg:grid-cols-2 gap-12 lg:gap-16 items-center ${reverse ? 'lg:grid-flow-col-dense' : ''}`}>
           
           {/* Content */}
           <div className={`${reverse ? 'lg:col-start-2' : ''}`}>
@@ -55,23 +54,12 @@ export const ContentStep = ({
           {/* Image */}
           <div className={`${reverse ? 'lg:col-start-1' : ''}`}>
             <div className="slide-up">
-              {/* Mobile: full width, Desktop: 1:1 square aspect ratio */}
-              <div className="lg:max-w-md lg:mx-auto w-full">
-                <AspectRatio ratio={1} className="hidden lg:block">
-                  <img
-                    src={imageSrc}
-                    alt={imageAlt}
-                    className="lazy-image rounded-lg shadow-2xl w-full h-full object-cover"
-                    loading="lazy"
-                  />
-                </AspectRatio>
-                <img
-                  src={imageSrc}
-                  alt={imageAlt}
-                  className="section-image lazy-image rounded-lg shadow-2xl lg:hidden"
-                  loading="lazy"
-                />
-              </div>
+              <img
+                src={imageSrc}
+                alt={imageAlt}
+                className="section-image lazy-image rounded-lg shadow-2xl"
+                loading="lazy"
+              />
             </div>
           </div>
         </div>
